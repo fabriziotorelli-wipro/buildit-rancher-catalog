@@ -1,6 +1,6 @@
 # Rancher BuildIt Catalog 
 
-This catalog provides templates created by the community, and they are not maintained or supported by BuildIt - Center of excellence, Dublin, Republic of Ireland.
+This catalog provides templates created by the BuildIt community, and they are not maintained or supported by BuildIt - Center of excellence, Dublin, Republic of Ireland.
 
 # License
 Copyright (c) 2016-2017 [BuildIt, Inc.](https://www.linkedin.com/company/buildit.)
