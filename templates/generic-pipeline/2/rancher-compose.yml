@@ -1,0 +1,83 @@
+.catalog:
+  name: "BuildIt - Dublin Architecture Department Microservices POC Pipeline"
+  version: "v.1.0.0 - microservices poc pipeline"
+  description: "This is a Sampler Microservices Pipeline, Defining some pipelines in the CI infrastructured including Jenkins, Nexus and Sonar."
+  uuid: buildit-microservices-pipeline-1
+  questions:
+    - variable: "JENKINSPORT"
+      label: "Jenkins Public Port"
+      description: "Port on which to run Jenkins Web Interface (fixed for this ansible level)"
+      default: "8080"
+      required: true
+      type: "enum"
+      options:
+        - "8080"
+    - variable: "JENKINSJNLPPORT"
+      label: "Jenkins JNLP Port"
+      description: "Port on which to run Jenkins JNLP Listener (fixed for this ansible level)"
+      default: "50000"
+      required: true
+      type: "enum"
+      options:
+        - "50000"
+    - variable: "SONARPORT"
+      label: "SonarQube Public Port"
+      description: "Port on which to run SonarQube Web Interface (fixed for this ansible level)"
+      default: "9000"
+      required: true
+      type: "enum"
+      options:
+        - "9000"
+    - variable: "NEXUSPORT"
+      label: "Nexus Public Port"
+      description: "Port on which to run Nexus Web Interface (fixed for this ansible level)"
+      default: "9003"
+      required: true
+      type: "enum"
+      options:
+        - "9003"
+
+sonarqube_db_volumes:
+  scale: 1
+sonarqube_db:
+  scale: 1
+  # health_check:
+  #   port: 8080
+  #   interval: 3000
+  #   unhealthy_threshold: 5
+  #   healthy_threshold: 5
+  #   response_timeout: 2000
+  #   request_line: 'GET "/" "HTTP/1.0"'
+sonarqube_volumes:
+  scale: 1
+sonarqube:
+  scale: 1
+  # health_check:
+  #   port: 8080
+  #   interval: 3000
+  #   unhealthy_threshold: 5
+  #   healthy_threshold: 5
+  #   response_timeout: 2000
+  #   request_line: 'GET "/" "HTTP/1.0"'
+nexus_volumes:
+  scale: 1
+nexus:
+  scale: 1
+  # health_check:
+  #   port: 8080
+  #   interval: 3000
+  #   unhealthy_threshold: 5
+  #   healthy_threshold: 5
+  #   response_timeout: 2000
+  #   request_line: 'GET "/" "HTTP/1.0"'
+jenkins_volumes:
+  scale: 1
+jenkins:
+  scale: 1
+  # health_check:
+  #   port: 8080
+  #   interval: 3000
+  #   unhealthy_threshold: 5
+  #   healthy_threshold: 5
+  #   response_timeout: 2000
+  #   request_line: 'GET "/" "HTTP/1.0"'
