@@ -1,12 +1,12 @@
 name: BuildIt - Ansible Pipelines Collection
 description: |
-  Collection of Generic/Qualified Pipelinea from Ansible Repositories. In the stack we have the configuration of : Jenkins Ansible, Nexus Ansible, PostgreSQL for SonarQube, SonarQube.
-  All the ansible procedure will be pulled from a single repository and downloaded on the platform. This playbook wiil have a local scope for the playbooks execution, any role must accept as host: all, local or <ansible host>.
-  In the list we have at the moment :
-    - Generic Simplified Configuration Pipeline
-    - Generic Complete Configuration Pipeline
-    - Generic Complete Multi-Repository Configuration Pipeline [Not provided, yet ...]
-    - BuildIt Dublin Architecture Department Microservices POC Pipeline
+  Collection of Generic/Qualified Pipelinea from Ansible Repositories. In the stack we have the configuration of : Jenkins Ansible, Nexus Ansible, PostgreSQL for SonarQube, SonarQube. <br/>
+  All the ansible procedure will be pulled from a single repository and downloaded on the platform. This playbook wiil have a local scope for the playbooks execution, any role must accept as host: all, local or <ansible host>. <br/>
+  In the list we have at the moment : <br/>
+    - Generic Simplified Configuration Pipeline <br/>
+    - Generic Complete Configuration Pipeline <br/>
+    - Generic Complete Multi-Repository Configuration Pipeline [Not provided, yet ...] <br/>
+    - BuildIt Dublin Architecture Department Microservices POC Pipeline <br/>
 version: v1
 category: Applications
 maintainer: Fabrizio Torelli <fabrizio.torelli@wipro.com>
