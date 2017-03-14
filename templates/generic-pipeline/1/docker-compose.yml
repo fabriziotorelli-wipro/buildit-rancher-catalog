@@ -36,7 +36,7 @@ sonarqubedb:
   volumes_from:
     - sonarqubedbvolumes
 sonarqubevolumes:
-  image: builditftorelli/postgresql-ansible:9.6.2
+  image: builditftorelli/sonarqube-ansible:6.2
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
 sonarqube:
@@ -78,7 +78,7 @@ sonarqube:
   volumes_from:
     - sonarqubevolumes
 nexusvolumes:
-  image: builditftorelli/postgresql-ansible:9.6.2
+  image: builditftorelli/nexus-ansible:oss
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
 nexus:
