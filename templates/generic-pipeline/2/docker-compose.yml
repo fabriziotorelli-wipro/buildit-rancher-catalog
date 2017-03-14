@@ -1,11 +1,10 @@
 sonarqube_db_volumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: sonardb-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
 sonarqube_db:
+  labels:
+    io.rancher.sidekicks: sonarqube_db_volumes
   image: builditftorelli/postgresql-ansible:9.6.2
   container_name: sonardb-ansible-compose
   privileged: true
@@ -45,12 +44,11 @@ sonarqube_db:
     - sonarqube_db_volumes
 sonarqube_volumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: sonarqube-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
 sonarqube:
+  labels:
+    io.rancher.sidekicks: sonarqube_volumes
   links:
     - sonarqube_db:sonar-db.riglet
   image: builditftorelli/sonarqube-ansible:6.2
@@ -96,12 +94,11 @@ sonarqube:
     - sonarqube_volumes
 nexus_volumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: nexus-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup
 nexus:
+  labels:
+    io.rancher.sidekicks: nexus_volumes
   image: builditftorelli/nexus-ansible:oss
   container_name: nexus-ansible-compose
   privileged: true
@@ -139,12 +136,11 @@ nexus:
     - nexus_volumes
 jenkins_volumes:
   image: builditftorelli/jenkins-ansible:2.32.3
-  container_name: jenkins-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
 jenkins:
+  labels:
+    io.rancher.sidekicks: jenkins_volumes
   links:
     - sonarqube:sonar.riglet
     - nexus:nexus.riglet
