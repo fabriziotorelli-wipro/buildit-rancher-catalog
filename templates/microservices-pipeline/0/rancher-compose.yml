@@ -7,35 +7,27 @@
     - variable: "JENKINSPORT"
       label: "Jenkins Public Port"
       description: "Port on which to run Jenkins Web Interface (fixed for this ansible level)"
-      default: "8080"
+      default: 8080
       required: true
-      type: "enum"
-      options:
-        - "8080"
+      type: "int"
     - variable: "JENKINSJNLPPORT"
       label: "Jenkins JNLP Port"
       description: "Port on which to run Jenkins JNLP Listener (fixed for this ansible level)"
-      default: "50000"
+      default: 50000
       required: true
-      type: "enum"
-      options:
-        - "50000"
+      type: "int"
     - variable: "SONARPORT"
       label: "SonarQube Public Port"
       description: "Port on which to run SonarQube Web Interface (fixed for this ansible level)"
-      default: "9000"
+      default: 9000
       required: true
-      type: "enum"
-      options:
-        - "9000"
+      type: "int"
     - variable: "NEXUSPORT"
       label: "Nexus Public Port"
       description: "Port on which to run Nexus Web Interface (fixed for this ansible level)"
-      default: "9003"
+      default: 9003
       required: true
-      type: "enum"
-      options:
-        - "9003"
+      type: "int"
 
 sonarqube:
   health_check:
@@ -47,7 +39,7 @@ sonarqube:
     request_line: 'GET "/sonar" "HTTP/1.0"'
 nexus:
   health_check:
-    port: 9003
+    port: 8081
     interval: 60000
     unhealthy_threshold: 5
     healthy_threshold: 5
