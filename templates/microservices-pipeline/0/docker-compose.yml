@@ -121,6 +121,7 @@ jenkins:
     - sonarqube:sonar.riglet
     - nexus:nexus.riglet
   image: builditftorelli/jenkins-ansible:2.32.3
+  privileged: true
   container_name: jenkins-ansible-compose
   restart: unless-stopped
   tty: true
@@ -143,6 +144,11 @@ jenkins:
     - RESTART_JENKINS_AFTER_ANSIBLE=false
     - PRIVATE_PUBLIC_KEY_TAR_URL=https://github.com/hellgate75/online-keys/raw/master/20170311/jenkins/keys.tar
     - PLUGINS_TEXT_FILE_URL=
+    cap_add:
+      - IPC_LOCK
+      - SYS_ADMIN
+    ulimits:
+      memlock: -1
   ports:
     - ${JENKINSPORT}:8080
     - 50000:50000
