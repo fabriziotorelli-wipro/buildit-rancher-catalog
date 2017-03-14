@@ -1,6 +1,6 @@
 .catalog:
   name: "BuildIt - Dublin Architecture Department Microservices POC Pipeline"
-  version: "v.1.0.0 - microservices poc pipeline"
+  version: "v1"
   description: "This is a Sampler Microservices Pipeline, Defining some pipelines in the CI infrastructured including Jenkins, Nexus and Sonar."
   uuid: buildit-microservices-pipeline-1
   questions:
