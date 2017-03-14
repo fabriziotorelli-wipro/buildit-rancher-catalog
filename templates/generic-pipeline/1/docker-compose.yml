@@ -1,17 +1,13 @@
-sonarqube_db_volumes:
+sonarqubedbvolumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: sonardb-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
-sonarqube_db:
+sonarqubedb:
+  labels:
+    io.rancher.sidekicks: sonarqubedbvolumes
   image: builditftorelli/postgresql-ansible:9.6.2
   container_name: sonardb-ansible-compose
-  privileged: true
   restart: unless-stopped
-  domainname: sonar-db.riglet
-  hostname: sonar-db
   tty: true
   stdin_open: true
   environment:
@@ -37,29 +33,20 @@ sonarqube_db:
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
   ports:
     - 5432:5432
-  cap_add:
-    - IPC_LOCK
-    - SYS_ADMIN
-  ulimits:
-    memlock: -1
   volumes_from:
-    - sonarqube_db_volumes
-sonarqube_volumes:
+    - sonarqubedbvolumes
+sonarqubevolumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: sonarqube-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
 sonarqube:
+  labels:
+    io.rancher.sidekicks: sonarqubevolumes
   links:
-    - sonarqube_db:sonar-db.riglet
+    - sonarqubedb:sonar-db.riglet
   image: builditftorelli/sonarqube-ansible:6.2
   container_name: sonarqube-ansible-compose
-  privileged: true
   restart: unless-stopped
-  domainname: sonar.riglet
-  hostname: sonar
   tty: true
   stdin_open: true
   environment:
@@ -88,21 +75,15 @@ sonarqube:
   ports:
     - ${SONARPORT}:9000
     - 9092:9092
-  cap_add:
-    - IPC_LOCK
-    - SYS_ADMIN
-  ulimits:
-    memlock: -1
   volumes_from:
-    - sonarqube_volumes
-nexus_volumes:
+    - sonarqubevolumes
+nexusvolumes:
   image: builditftorelli/postgresql-ansible:9.6.2
-  container_name: nexus-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup
 nexus:
+  labels:
+    io.rancher.sidekicks: nexusvolumes
   image: builditftorelli/nexus-ansible:oss
   container_name: nexus-ansible-compose
   privileged: true
@@ -137,24 +118,20 @@ nexus:
   ulimits:
     memlock: -1
   volumes_from:
-    - nexus_volumes
-jenkins_volumes:
+    - nexusvolumes
+jenkinsvolumes:
   image: builditftorelli/jenkins-ansible:2.32.3
-  container_name: jenkins-ansible-compose-volumes
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
-  volumes:
-    - /sys/fs/cgroup:/sys/fs/cgroup
 jenkins:
+  labels:
+    io.rancher.sidekicks: jenkinsvolumes
   links:
     - sonarqube:sonar.riglet
     - nexus:nexus.riglet
   image: builditftorelli/jenkins-ansible:2.32.3
   container_name: jenkins-ansible-compose
-  privileged: true
   restart: unless-stopped
-  domainname: jenkins.riglet
-  hostname: jenkins
   tty: true
   stdin_open: true
   environment:
@@ -178,10 +155,5 @@ jenkins:
   ports:
     - ${JENKINSPORT}:8080
     - 50000:50000
-  cap_add:
-    - IPC_LOCK
-    - SYS_ADMIN
-  ulimits:
-    memlock: -1
   volumes_from:
-    - jenkins_volumes
+    - jenkinsvolumes
