@@ -86,10 +86,7 @@ nexus:
     io.rancher.sidekicks: nexusvolumes
   image: builditftorelli/nexus-ansible:oss
   container_name: nexus-ansible-compose
-  privileged: true
   restart: unless-stopped
-  domainname: nexus.riglet
-  hostname: nexus
   tty: true
   stdin_open: true
   environment:
@@ -112,11 +109,6 @@ nexus:
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
   ports:
     - ${NEXUSPORT}:8081
-  cap_add:
-    - IPC_LOCK
-    - SYS_ADMIN
-  ulimits:
-    memlock: -1
   volumes_from:
     - nexusvolumes
 jenkinsvolumes:
