@@ -122,6 +122,7 @@ jenkins:
     - nexus:nexus.riglet
   image: builditftorelli/jenkins-ansible:2.32.3
   container_name: jenkins-ansible-compose
+  privileged: true
   restart: unless-stopped
   tty: true
   stdin_open: true
@@ -143,6 +144,11 @@ jenkins:
     - RESTART_JENKINS_AFTER_ANSIBLE=false
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
     - PLUGINS_TEXT_FILE_URL=
+  cap_add:
+    - IPC_LOCK
+    - SYS_ADMIN
+  ulimits:
+    memlock: -1
   ports:
     - ${JENKINSPORT}:8080
     - 50000:50000
