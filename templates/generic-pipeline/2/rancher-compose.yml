@@ -37,9 +37,7 @@
       options:
         - "9003"
 
-sonarqube_db_volumes:
-  scale: 1
-sonarqube_db:
+sonarqubedb:
   scale: 1
   # health_check:
   #   port: 8080
@@ -48,36 +46,30 @@ sonarqube_db:
   #   healthy_threshold: 5
   #   response_timeout: 2000
   #   request_line: 'GET "/" "HTTP/1.0"'
-sonarqube_volumes:
-  scale: 1
 sonarqube:
   scale: 1
-  # health_check:
-  #   port: 8080
-  #   interval: 3000
-  #   unhealthy_threshold: 5
-  #   healthy_threshold: 5
-  #   response_timeout: 2000
-  #   request_line: 'GET "/" "HTTP/1.0"'
-nexus_volumes:
-  scale: 1
+  health_check:
+    port: 9000
+    interval: 3000
+    unhealthy_threshold: 5
+    healthy_threshold: 5
+    response_timeout: 2000
+    request_line: 'GET "/sonar" "HTTP/1.0"'
 nexus:
   scale: 1
-  # health_check:
-  #   port: 8080
-  #   interval: 3000
-  #   unhealthy_threshold: 5
-  #   healthy_threshold: 5
-  #   response_timeout: 2000
-  #   request_line: 'GET "/" "HTTP/1.0"'
-jenkins_volumes:
-  scale: 1
+  health_check:
+    port: 9003
+    interval: 3000
+    unhealthy_threshold: 5
+    healthy_threshold: 5
+    response_timeout: 2000
+    request_line: 'GET "/nexus" "HTTP/1.0"'
 jenkins:
   scale: 1
-  # health_check:
-  #   port: 8080
-  #   interval: 3000
-  #   unhealthy_threshold: 5
-  #   healthy_threshold: 5
-  #   response_timeout: 2000
-  #   request_line: 'GET "/" "HTTP/1.0"'
+  health_check:
+    port: 8080
+    interval: 3000
+    unhealthy_threshold: 5
+    healthy_threshold: 5
+    response_timeout: 2000
+    request_line: 'GET "/" "HTTP/1.0"'
