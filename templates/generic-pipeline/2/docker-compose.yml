@@ -40,7 +40,7 @@ sonarqube:
   labels:
     io.rancher.sidekicks: sonarqubevolumes
   links:
-    - sonarqube_db:sonar-db.riglet
+    - sonarqubedb:sonar-db.riglet
   image: builditftorelli/sonarqube-ansible:6.2
   container_name: sonarqube-ansible-compose
   restart: unless-stopped
