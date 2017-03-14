@@ -352,7 +352,7 @@ nexus:
     unhealthy_threshold: 5
     healthy_threshold: 5
     response_timeout: 2000
-    request_line: 'GET "/nexus" "HTTP/1.0"'
+    request_line: 'GET "/nexus/service/local/status" "HTTP/1.0"'
 jenkins:
   health_check:
     port: 8080
