@@ -3,6 +3,8 @@ sonarqubedbvolumes:
   entrypoint: ['/bin/bash']
   command: ['/bin/bash']
 sonarqubedb:
+  labels:
+    io.rancher.sidekicks: sonarqubedbvolumes
   image: builditftorelli/postgresql-ansible:9.6.2
   container_name: sonardb-ansible-compose
   restart: unless-stopped

@@ -47,7 +47,7 @@ sonarqubedb:
   #   response_timeout: 2000
   #   request_line: 'GET "/" "HTTP/1.0"'
 sonarqube:
-  scale: 1
+  # scale: 1
   health_check:
     port: 9000
     interval: 3000
@@ -56,7 +56,7 @@ sonarqube:
     response_timeout: 2000
     request_line: 'GET "/sonar" "HTTP/1.0"'
 nexus:
-  scale: 1
+  # scale: 1
   health_check:
     port: 9003
     interval: 3000
@@ -65,7 +65,7 @@ nexus:
     response_timeout: 2000
     request_line: 'GET "/nexus" "HTTP/1.0"'
 jenkins:
-  scale: 1
+  # scale: 1
   health_check:
     port: 8080
     interval: 3000
