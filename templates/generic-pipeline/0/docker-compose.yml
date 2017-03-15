@@ -146,10 +146,7 @@ jenkins:
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
     - PLUGINS_TEXT_FILE_URL=${PLUGINSTEXTURL}
   cap_add:
-    - IPC_LOCK
     - SYS_ADMIN
-  ulimits:
-    memlock: -1
   ports:
     - ${JENKINSPORT}:8080
     - 50000:50000
