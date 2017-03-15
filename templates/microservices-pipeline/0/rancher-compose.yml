@@ -29,7 +29,11 @@
       required: true
       type: "int"
 
+sonarqubedb:
+  scale: 1
+
 sonarqube:
+  scale: 1
   health_check:
     port: 9000
     interval: 60000
@@ -38,6 +42,7 @@ sonarqube:
     response_timeout: 2000
     request_line: 'GET "/sonar" "HTTP/1.0"'
 nexus:
+  scale: 1
   health_check:
     port: 8081
     interval: 60000
@@ -46,6 +51,7 @@ nexus:
     response_timeout: 2000
     request_line: 'GET "/nexus/service/local/status" "HTTP/1.0"'
 jenkins:
+  scale: 1
   health_check:
     port: 8080
     interval: 60000
