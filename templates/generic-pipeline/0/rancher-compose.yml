@@ -340,7 +340,7 @@ sonarqube:
     unhealthy_threshold: 5
     healthy_threshold: 5
     response_timeout: 2000
-    request_line: 'GET "/sonar" "HTTP/1.0"'
+    request_line: 'GET "/sonar/about" "HTTP/1.0"'
 nexus:
   scale: 1
   health_check:
