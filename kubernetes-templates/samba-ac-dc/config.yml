@@ -1,0 +1,6 @@
+name: samba-sc-dc
+version: 0.0.1-buildit
+description: |
+  Samba AC-DC BuildIt component is a qualified and optimized Domain Controller
+  ported from Helm.
+category: Networking

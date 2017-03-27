@@ -1,0 +1,30 @@
+.catalog:
+    name: Samba AC-DC
+    version: 0.0.1-rancher1
+    description: "Samba AC-DC Domain Controller"
+    maintainer: "BuildIt"
+    questions:
+        - variable: "SAMBA_REALM"
+          type: "string"
+          default: "corp.riglet.io"
+          label: "Realm for Samba AC-DC Server"
+          description: "Realm for Samba AC-DC Server"
+          required: true
+        - variable: "SAMBA_PASSWORD"
+          type: "string"
+          default: "Password123"
+          label: "Administration Password for Samba AC-DC Server"
+          description: "Administration Password for Samba AC-DC Server"
+          required: true
+        - variable: "SAMBA_LDAP_PORT"
+          type: "int"
+          default: 389
+          label: "LDAP Exposed Exposed for Samba AC-DC Server"
+          description: "LDAP Public Port for Samba AC-DC Server"
+          required: true
+        - variable: "SAMBA_DNS_PORT"
+          type: "int"
+          default: 53
+          label: "DNS  Exposed Port for Samba AC-DC Server"
+          description: "DNS Public Port for Samba AC-DC Server"
+          required: true
