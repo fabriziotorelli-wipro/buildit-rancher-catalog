@@ -2,5 +2,5 @@ name: BuildIt Samba AD-DC
 version: 0.0.1-buildit
 description: |
   Samba AD-DC BuildIt component is a qualified and optimized Domain Controller
-  ported from Rancher Kubernetes stack.
+  for Rancher Kubernetes environments.
 category: Networking
