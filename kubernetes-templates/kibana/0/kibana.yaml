@@ -42,6 +42,7 @@ metadata:
   labels:
     k8s-app: kibana-logging
 spec:
+  clusterIP: ${KIBANA_CLUSTER_IP}
   type: ClusterIP
   ports:
   - port: ${KIBANA_SERVICE_PORT}

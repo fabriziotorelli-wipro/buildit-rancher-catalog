@@ -6,7 +6,7 @@ metadata:
   name: ad-man-go-ad-man
   namespace: default
 spec:
-  clusterIP: 100.67.194.5
+  clusterIP: ${AD_MAN_GO_CLUSTER_IP}
   ports:
   - name: go-ad-man
     port: ${GO_AD_PORT}

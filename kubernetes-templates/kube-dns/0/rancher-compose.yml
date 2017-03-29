@@ -1,9 +1,14 @@
 .catalog:
     name: Buildit Kubernetes DNS
-    version: 0.0.1-rancher1-aws
-    description: "Buildit Kubernetes DNS Stack"
+    version: 0.0.1-buildit-aws
+    description: "Buildit Kubernetes DNS Stack. Self-defined Cluster-IP version."
     maintainer: "BuildIt"
     questions:
+        - variable: "KUBE_DNS_CLUSTER_IP"
+          type: "string"
+          default: "100.64.0.10"
+          label: "KubeDNS Cluster IP"
+          description: "KubeDNS Cluster IP"
         - variable: "KUBE_DNS_DOMAIN"
           type: "string"
           default: "cluster.local."

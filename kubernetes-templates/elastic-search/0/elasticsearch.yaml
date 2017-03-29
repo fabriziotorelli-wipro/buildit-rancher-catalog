@@ -52,6 +52,7 @@ metadata:
     kubernetes.io/cluster-service: "true"
     kubernetes.io/name: "Elasticsearch"
 spec:
+  clusterIP: ${ELASTIC_SEARCH_CLUSTER_IP}
   ports:
   - port: ${ELASTIC_DB_PORT}
     targetPort: 9200
@@ -63,6 +64,7 @@ spec:
     name: transport
   selector:
     k8s-app: elasticsearch-logging
+  type: ClusterIP
 
 apiVersion: extensions/v1beta1
 kind: Ingress

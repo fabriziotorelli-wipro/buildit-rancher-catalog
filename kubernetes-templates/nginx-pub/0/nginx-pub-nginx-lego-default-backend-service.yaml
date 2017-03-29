@@ -6,7 +6,7 @@ metadata:
   name: nginx-pub-nginx-lego-default-backend
   namespace: public
 spec:
-  clusterIP: 100.64.12.230
+  clusterIP: ${NGINX_PUB_BACKEND_CLUSTER_IP}
   ports:
   - port: ${NGINX_PUB_BACKEND_PORT}
     protocol: TCP

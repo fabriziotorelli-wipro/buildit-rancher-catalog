@@ -6,7 +6,7 @@ metadata:
   name: nginx-int-nginx-lego-default-backend
   namespace: default
 spec:
-  clusterIP: 100.65.128.242
+  clusterIP: ${NGINX_INT_BACKEND_CLUSTER_IP}
   ports:
   - port: ${NGINX_INT_BACKEND_PORT}
     protocol: TCP

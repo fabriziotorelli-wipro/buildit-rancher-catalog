@@ -6,7 +6,7 @@ metadata:
   name: nginx-pub-nginx-lego
   namespace: public
 spec:
-  clusterIP: 100.66.140.123
+  clusterIP: ${NGINX_PUB_CLUSTER_IP}
   ports:
   - name: http
     nodePort: 30904

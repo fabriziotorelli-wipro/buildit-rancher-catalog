@@ -1,5 +1,5 @@
 name: Buildit Nginx Public
-version: 0.0.1-buildit
+version: 0.0.2-buildit-aws-elb
 description: |
   Nginx Public Buildit component is a qualified and optimized Nginx instance for externalized communication for the RIG 3.0 networking
   for Rancher Kubernetes environments.

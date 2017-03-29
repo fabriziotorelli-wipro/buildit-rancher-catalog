@@ -9,7 +9,7 @@ metadata:
   name: jenkins-jenkins
   namespace: default
 spec:
-  clusterIP: 100.65.96.143
+  clusterIP: ${JENKINS_CLUSTER_IP}
   ports:
   - name: http
     port: ${JENKINS_PORT}
@@ -23,5 +23,3 @@ spec:
     component: jenkins-jenkins-master
   sessionAffinity: None
   type: ClusterIP
-status:
-  loadBalancer: {}

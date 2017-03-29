@@ -6,7 +6,7 @@ metadata:
   name: nginx-pub-nginx-lego-monitoring
   namespace: public
 spec:
-  clusterIP: 100.70.139.246
+  clusterIP: ${NGINX_PUB_MONITORING_CLUSTER_IP}
   ports:
   - name: vts-stats
     port: 18080

@@ -1,9 +1,24 @@
 .catalog:
-    name: Buildit Nginx Internal
-    version: 0.0.1-rancher1-aws-elb
-    description: "Buildit Nginx Internal Reverse Proxy"
+    name: Buildit Nginx Public
+    version: 0.0.1-buildit-aws-elb
+    description: "Buildit Nginx Public Reverse Proxy. Self-defined Cluster-IP version."
     maintainer: "BuildIt"
     questions:
+        - variable: "NGINX_PUB_BACKEND_CLUSTER_IP"
+          type: "string"
+          default: "100.64.12.230"
+          label: "Nginx Public Backend Cluster IP"
+          description: "Nginx Public Backend Cluster IP"
+        - variable: "NGINX_PUB_CLUSTER_IP"
+          type: "string"
+          default: "100.66.140.123"
+          label: "Nginx Public Cluster IP"
+          description: "Nginx Public Cluster IP"
+        - variable: "NGINX_PUB_MONITORING_CLUSTER_IP"
+          type: "string"
+          default: "100.70.139.246"
+          label: "Nginx Public Monitoring Cluster IP"
+          description: "Nginx Public Monitoring Cluster IP"
         - variable: "NGINX_PUB_BACKEND_PORT"
           type: "int"
           default: 80

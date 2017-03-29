@@ -6,7 +6,7 @@ metadata:
   name: openvpn-openvpn
   namespace: default
 spec:
-  clusterIP: 100.66.26.82
+  clusterIP: ${OPEN_VPN_CLUSTER_IP}
   ports:
   - name: openvpn
     nodePort: 31458

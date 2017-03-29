@@ -1,5 +1,5 @@
 name: Buildit Nginx Internal
-version: 0.0.1-buildit
+version: 0.0.2-buildit
 description: |
   Nginx Internal Buildit component is a qualified and optimized Nginx instance for internal communication for the RIG 3.0 networking
   for Rancher Kubernetes environments.

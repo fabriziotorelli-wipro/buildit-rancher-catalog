@@ -1,9 +1,14 @@
 .catalog:
     name: BuildIt Samba AD-DC
-    version: 0.0.1-rancher1
-    description: "BuildIt Samba AD-DC Domain Controller"
+    version: 0.0.1-buildit
+    description: "BuildIt Samba AD-DC Domain Controller. Self-defined Cluster-IP version."
     maintainer: "BuildIt"
     questions:
+        - variable: "SAMBA_CLUSTER_IP"
+          type: "string"
+          default: "100.65.112.12"
+          label: "Samba AD-DC Cluster IP"
+          description: "Samba AD-DC Cluster IP"
         - variable: "SAMBA_REALM"
           type: "string"
           default: "corp.riglet.io"

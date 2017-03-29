@@ -6,7 +6,7 @@ metadata:
   name: ad-dc-samba-ad-dc
   namespace: default
 spec:
-  clusterIP: 100.65.112.12
+  clusterIP: ${SAMBA_CLUSTER_IP}
   ports:
   - name: ldap
     port: ${SAMBA_LDAP_PORT}

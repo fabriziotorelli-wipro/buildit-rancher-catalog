@@ -1,5 +1,5 @@
 name: Buildit ElasticSearch
-version: 0.0.1-buildit
+version: 0.0.2-buildit
 description: |
   ElasticSearch Buildit component is a qualified and optimized ElasticSearch Engine
   for Rancher Kubernetes environments.

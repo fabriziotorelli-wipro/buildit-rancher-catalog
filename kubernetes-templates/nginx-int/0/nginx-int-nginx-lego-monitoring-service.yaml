@@ -6,7 +6,7 @@ metadata:
   name: nginx-int-nginx-lego-monitoring
   namespace: default
 spec:
-  clusterIP: 100.64.30.115
+  clusterIP: ${NGINX_INT_MONITORING_CLUSTER_IP}
   ports:
   - name: vts-stats
     port: 18080
