@@ -16,6 +16,12 @@
           label: "Administration Password for Samba AD-DC Server"
           description: "Administration Password for Samba AD-DC Server"
           required: true
+        - variable: "SAMBA_HOSTNAME"
+          type: "string"
+          default: "ad-dc-samba-ad-dc.default.svc.cluster.local"
+          label: "Hostname assigned to Samba AD-DC Server"
+          description: "Hostname assigned to Samba AD-DC Server"
+          required: true
         - variable: "SAMBA_LDAP_PORT"
           type: "int"
           default: 389

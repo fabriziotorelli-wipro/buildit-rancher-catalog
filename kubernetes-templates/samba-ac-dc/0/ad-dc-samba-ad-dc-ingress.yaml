@@ -2,14 +2,14 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   generation: 1
-  name: mongo-staging-mongodb
+  name: ad-dc-samba-ad-dc
   namespace: default
 spec:
   rules:
-  - host: ${MONGODB_HOST_NAME}
+  - host: ${SAMBA_HOSTNAME}
     http:
       paths:
       - backend:
-          serviceName: mongo-staging-mongodb
-          servicePort: ${MONGODB_PORT}
+          serviceName: ad-dc-samba-ad-dc
+          servicePort: ${SAMBA_LDAP_PORT}
         path: /

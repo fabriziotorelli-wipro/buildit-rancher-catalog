@@ -10,7 +10,7 @@ spec:
   ports:
   - name: openvpn
     nodePort: 31458
-    port: 443
+    port: ${OPEN_VPN_PORT}
     protocol: TCP
     targetPort: 443
   selector:
@@ -20,4 +20,4 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - hostname: a6fab72e20f6111e7ad030a31f40c1a5-2051985363.ap-northeast-1.elb.amazonaws.com
+    - hostname: ${OPEN_VPN_LOAD_BALANCER}

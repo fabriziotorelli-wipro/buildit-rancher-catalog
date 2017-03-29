@@ -27,25 +27,25 @@ spec:
       containers:
       - env:
         - name: OVPN_NETWORK
-          value: 10.240.0.0
+          value: ${OVPN_NETWORK}
         - name: OVPN_SUBNET
-          value: 255.255.0.0
+          value: ${OVPN_SUBNET}
         - name: OVPN_PROTO
-          value: tcp
+          value: ${OVPN_PROTO}
         - name: OVPN_K8S_SERVICE_NETWORK
-          value: 100.0.0.0
+          value: ${OVPN_K8S_SERVICE_NETWORK}
         - name: OVPN_K8S_SERVICE_SUBNET
-          value: 255.0.0.0
+          value: ${OVPN_K8S_SERVICE_SUBNET}
         - name: OVPN_K8S_POD_NETWORK
-          value: 10.0.0.0
+          value: ${OVPN_K8S_POD_NETWORK}
         - name: OVPN_K8S_POD_SUBNET
-          value: 255.0.0.0
+          value: ${OVPN_K8S_POD_SUBNET}
         - name: LDAP_URL
-          value: ldap://ad-dc-samba-ad-dc.default.svc.cluster.local
+          value: ${LDAP_URL}
         - name: LDAP_BASE_NAME
-          value: CN=Users,dc=corp,dc=riglet,dc=io
+          value: ${LDAP_BASE_NAME}
         - name: LDAP_BIND_NAME
-          value: CN=k8srig3,CN=Users,DC=corp,DC=riglet,DC=io
+          value: ${LDAP_BIND_NAME}
         - name: LDAP_BIND_PASS
           valueFrom:
             secretKeyRef:
@@ -54,9 +54,9 @@ spec:
         - name: LDAP_LOGIN_ATTR
           value: CN
         - name: REQUIRE_CERT
-          value: "true"
+          value: "${REQUIRE_CERT}"
         - name: REQUIRE_PAM
-          value: "true"
+          value: "${REQUIRE_PAM}"
         - name: MORE_OPTS
           value: push "route 172.20.0.0 255.255.0.0"\nduplicate-cn
         image: builditdigital/openvpn-k8s:latest
