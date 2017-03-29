@@ -4,13 +4,13 @@
     description: "Buildit Nginx Internal Reverse Proxy"
     maintainer: "BuildIt"
     questions:
-        - variable: "NGINX_BACKEND_PORT"
+        - variable: "NGINX_PUB_BACKEND_PORT"
           type: "int"
           default: 80
           label: "Nginx Exposed Backend Port"
           description: "Public NGinx Backend Port"
           required: true
-        - variable: "NGINX_HTTP_PORT"
+        - variable: "NGINX_PUB_HTTP_PORT"
           type: "int"
           default: 80
           label: "Nginx Exposed Http Port"
@@ -22,13 +22,13 @@
           label: "Nginx Exposed Https Port"
           description: "Public NGinx Https Port"
           required: true
-        - variable: "NGINX_MONITORING_PORT"
+        - variable: "NGINX_PUB_MONITORING_PORT"
           type: "int"
           default: 18080
           label: "Nginx Exposed Monitoring Port"
           description: "Public NGinx Monitoring Port"
           required: true
-        - variable: "NGINX_LOAD_BALANCER"
+        - variable: "NGINX_PUB_LOAD_BALANCER"
           type: "string"
           default: "a4c9df4460f5511e7ad030a31f40c1a5-158414082.ap-northeast-1.elb.amazonaws.com"
           label: "External Load Balancer hostname"

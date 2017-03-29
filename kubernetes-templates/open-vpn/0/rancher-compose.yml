@@ -28,12 +28,6 @@
           label: "External Load Balancer hostname"
           description: "External Load Balancer used to connect the Open-VPN Host for access authentication, External Endpoint. You can use an elastic IP to connect the Open-VPN service to the external network"
           required: true
-        - variable: "OPEN_VPN_HOST_NAME"
-          type: "string"
-          default: "openvpn.riglet"
-          label: "Open-VPN hostname"
-          description: "Open-VPN hostname"
-          required: true
         - variable: "OPEN_VPN_PORT"
           type: "int"
           default: 443

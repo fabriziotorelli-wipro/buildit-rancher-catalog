@@ -10,17 +10,17 @@ spec:
   ports:
   - name: http
     nodePort: 30904
-    port: ${NGINX_HTTP_PORT}
+    port: ${NGINX_PUB_HTTP_PORT}
     protocol: TCP
     targetPort: 80
   - name: https
     nodePort: 30475
-    port: ${NGINX_HTTPS_PORT}
+    port: ${NGINX_PUB_HTTPS_PORT}
     protocol: TCP
     targetPort: 443
   - name: monitoring
     nodePort: 31753
-    port: ${NGINX_MONITORING_PORT}
+    port: ${NGINX_PUB_MONITORING_PORT}
     protocol: TCP
     targetPort: 18080
   selector:

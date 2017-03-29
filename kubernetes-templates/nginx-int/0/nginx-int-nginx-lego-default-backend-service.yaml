@@ -8,7 +8,7 @@ metadata:
 spec:
   clusterIP: 100.65.128.242
   ports:
-  - port: ${NGINX_BACKEND_PORT}
+  - port: ${NGINX_INT_BACKEND_PORT}
     protocol: TCP
     targetPort: 8080
   selector:

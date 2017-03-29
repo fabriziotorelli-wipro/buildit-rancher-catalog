@@ -4,25 +4,25 @@
     description: "Buildit Nginx Internal Reverse Proxy"
     maintainer: "BuildIt"
     questions:
-        - variable: "NGINX_BACKEND_PORT"
+        - variable: "NGINX_INT_BACKEND_PORT"
           type: "int"
           default: 80
           label: "Nginx Exposed Backend Port"
           description: "Public NGinx Backend Port"
           required: true
-        - variable: "NGINX_HTTP_PORT"
+        - variable: "NGINX_INT_HTTP_PORT"
           type: "int"
           default: 80
           label: "Nginx Exposed Http Port"
           description: "Public NGinx Http Port"
           required: true
-        - variable: "NGINX_HTTPS_PORT"
+        - variable: "NGINX_INT_HTTPS_PORT"
           type: "int"
           default: 443
           label: "Nginx Exposed Https Port"
           description: "Public NGinx Https Port"
           required: true
-        - variable: "NGINX_MONITORING_PORT"
+        - variable: "NGINX_INT_MONITORING_PORT"
           type: "int"
           default: 18080
           label: "Nginx Exposed Monitoring Port"

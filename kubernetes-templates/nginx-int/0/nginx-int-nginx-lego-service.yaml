@@ -12,17 +12,17 @@ spec:
   ports:
   - name: http
     nodePort: 32084
-    port: ${NGINX_HTTP_PORT}
+    port: ${NGINX_INT_HTTP_PORT}
     protocol: TCP
     targetPort: 80
   - name: https
     nodePort: 32295
-    port: ${NGINX_HTTPS_PORT}
+    port: ${NGINX_INT_HTTPS_PORT}
     protocol: TCP
     targetPort: 443
   - name: monitoring
     nodePort: 32142
-    port: ${NGINX_MONITORING_PORT}
+    port: ${NGINX_INT_MONITORING_PORT}
     protocol: TCP
     targetPort: 18080
   selector:
