@@ -1,0 +1,6 @@
+name: Buildit Kibana
+version: 0.0.1-buildit
+description: |
+  Kibana Buildit component is a qualified and optimized ElasticSearch Data Visualizer
+  ported from Rancher Kubernetes stack.
+category: Application
