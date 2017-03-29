@@ -63,4 +63,4 @@ spec:
       - path: /
         backend:
           serviceName: kibana-logging
-          servicePort: 80
+          servicePort: ${KIBANA_SERVICE_PORT}

@@ -1,6 +1,6 @@
 .catalog:
     name: Buildit Open VPN
-    version: 0.0.1-rancher1-aws-elb
+    version: 0.0.1-rancher1-aws
     description: "Buildit Open VPN Access Manager"
     maintainer: "BuildIt"
     questions:
@@ -21,12 +21,6 @@
           default: "UGFzc3dvcmQxMjM="
           label: "Base Password"
           description: "Base64 password (default: Password123)"
-          required: true
-        - variable: "OPEN_VPN_LOAD_BALANCER"
-          type: "string"
-          default: "a6fab72e20f6111e7ad030a31f40c1a5-2051985363.ap-northeast-1.elb.amazonaws.com"
-          label: "External Load Balancer hostname"
-          description: "External Load Balancer used to connect the Open-VPN Host for access authentication, External Endpoint. You can use an elastic IP to connect the Open-VPN service to the external network"
           required: true
         - variable: "OPEN_VPN_HOST_NAME"
           type: "string"

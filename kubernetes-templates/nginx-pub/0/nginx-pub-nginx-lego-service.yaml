@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    chart: nginx-lego-0.2.0
+  name: nginx-pub-nginx-lego
+  namespace: public
+spec:
+  clusterIP: 100.66.140.123
+  ports:
+  - name: http
+    nodePort: 30904
+    port: ${NGINX_HTTP_PORT}
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    nodePort: 30475
+    port: ${NGINX_HTTPS_PORT}
+    protocol: TCP
+    targetPort: 443
+  - name: monitoring
+    nodePort: 31753
+    port: ${NGINX_MONITORING_PORT}
+    protocol: TCP
+    targetPort: 18080
+  selector:
+    app: nginx-pub-nginx-lego
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: ${NGINX_LOAD_BALANCER}
