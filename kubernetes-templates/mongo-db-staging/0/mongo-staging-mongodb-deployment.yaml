@@ -41,7 +41,7 @@ spec:
               key: mongodb-password
               name: mongo-staging-mongodb
         - name: MONGODB_DATABASE
-        image: bitnami/mongodb:3.4.2-r1
+        image: builditftorelli/eolas-mongodb:3.4.2-r1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
