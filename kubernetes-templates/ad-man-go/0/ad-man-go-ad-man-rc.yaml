@@ -1,11 +1,10 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  generation: 1
   labels:
-    chart: go-ad-man-1.0.0
+    heritage: helm
   name: ad-man-go-ad-man
   namespace: default
 spec:
