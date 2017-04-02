@@ -32,7 +32,7 @@ sonarqubedb:
     - POSTGRES_OS_GROUP=
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
   ports:
-    - 5432:5432
+    - ${POSTGRESQLPORT}:5432
   volumes_from:
     - sonarqubedbvolumes
 sonarqubevolumes:
@@ -74,7 +74,7 @@ sonarqube:
     - PRIVATE_PUBLIC_KEY_TAR_URL=${KEYURL}
   ports:
     - ${SONARPORT}:9000
-    - 9092:9092
+    - ${SONARLISTENERPORT}:9092
   volumes_from:
     - sonarqubevolumes
 nexusvolumes:
@@ -147,6 +147,6 @@ jenkins:
     - PLUGINS_TEXT_FILE_URL=${PLUGINSTEXTURL}
   ports:
     - ${JENKINSPORT}:8080
-    - 50000:50000
+    - ${JENKINSJNLPPORT}:50000
   volumes_from:
     - jenkinsvolumes
