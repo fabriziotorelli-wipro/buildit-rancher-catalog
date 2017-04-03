@@ -5,7 +5,7 @@ This catalog provides templates created by the BuildIt community, and they are n
 # License
 Copyright (c) 2016-2017 [BuildIt, Inc.](https://www.linkedin.com/company/buildit.)
 
-Licensed under the MIT License (the "License");
+Licensed under the [MIT](/LICENSE) License (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
