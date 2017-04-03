@@ -3,7 +3,7 @@
 This catalog provides templates created by the BuildIt community, and they are not maintained or supported by BuildIt - Center of excellence, Dublin, Republic of Ireland.
 
 # License
-Copyright (c) 2016-2017 [BuildIt, Inc.](https://www.linkedin.com/company/buildit.)
+Copyright (c) 2016-2017 [BuildIt, Inc.](http://buildit.digital)
 
 Licensed under the [MIT](/LICENSE) License (the "License");
 you may not use this file except in compliance with the License.
