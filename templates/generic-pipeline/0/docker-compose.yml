@@ -10,6 +10,7 @@ sonarqubedb:
   restart: unless-stopped
   tty: true
   stdin_open: true
+  hostname: ${SONARDBHOST}.${SONARDBDOMAIN}
   environment:
     - MAIN_REPO_URL=${MAINREPOURL}
     - MAIN_REPO_BRANCH=${MAINREPOBRANCH}
@@ -49,6 +50,7 @@ sonarqube:
   restart: unless-stopped
   tty: true
   stdin_open: true
+  hostname: ${SONARHOST}.${SONARDOMAIN}
   environment:
     - MAIN_REPO_URL=${MAINREPOURL}
     - MAIN_REPO_BRANCH=${MAINREPOBRANCH}
@@ -89,6 +91,7 @@ nexus:
   restart: unless-stopped
   tty: true
   stdin_open: true
+  hostname: ${NEXUSHOST}.${NEXUSDOMAIN}
   environment:
     - MAIN_REPO_URL=${MAINREPOURL}
     - MAIN_REPO_BRANCH=${MAINREPOBRANCH}
@@ -127,6 +130,7 @@ jenkins:
   restart: unless-stopped
   tty: true
   stdin_open: true
+  hostname: ${JENKINSHOST}.${JENKINSDOMAIN}
   environment:
     - MAIN_REPO_URL=${MAINREPOURL}
     - MAIN_REPO_BRANCH=${MAINREPOBRANCH}
